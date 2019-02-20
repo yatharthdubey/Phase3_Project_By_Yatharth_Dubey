@@ -6,7 +6,7 @@ import javax.persistence.Persistence;
 
 public class Util {
 
-	private EntityManager em;
+	private static EntityManager em;
 	
 	public static EntityManager getEntityManager() {
 		
@@ -14,5 +14,7 @@ public class Util {
         EntityManager em = emf.createEntityManager();  
         return em;
 	}
-	
+	public static void close() {
+		em.close();
+	}
 }
