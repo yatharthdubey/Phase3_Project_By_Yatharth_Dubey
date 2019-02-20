@@ -11,6 +11,7 @@ import com.capg.parallelproject.repo.WalletRepo;
 import com.capg.parallelproject.repo.WalletRepoImpl;
 import com.capg.parallelproject.service.WalletService;
 import com.capg.parallelproject.service.WalletServiceImpl;
+import com.capg.parallelproject.util.Util;
 
 public class Client {
 
@@ -28,8 +29,7 @@ public class Client {
 					+ "3.Depostie Amount \n"
 					+ "4.WithDraw Amount \n"
 					+ "5.Fund Transfer \n"
-					+ "6.Print Last 10 Transactions \n"
-					+ "7.Exit ");
+					+ "6.Exit ");
 			int ch = sc.nextInt();
 			sc.nextLine();
 			switch(ch) {
@@ -215,8 +215,8 @@ public class Client {
 						}
 						break;
 						
-				case 6:	break;
-				case 7: sc.close();
+				case 6: sc.close();
+						Util.close();
 						System.exit(0);
 				default: System.out.println("Sorry! You Entered a Wrong Choice");
 						 break;
@@ -271,3 +271,4 @@ public class Client {
 	}
 
 }
+
